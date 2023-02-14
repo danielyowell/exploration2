@@ -1,5 +1,10 @@
 import random
 
+def printBoard(board):
+    print(board[0], board[1], board[2])
+    print(board[3], board[4], board[5])
+    print(board[6], board[7], board[8])
+
 def threeCheck(board, array):
     count = 0
     for i in range( len(array) ):
@@ -9,7 +14,7 @@ def threeCheck(board, array):
         return True
 
 def horiCheck(board):
-    print("BEGIN HORICHECK")
+
     hwin1 = [0,1,2]
     hwin2 = [3,4,5]
     hwin3 = [6,7,8]
@@ -64,18 +69,18 @@ def gameWon(board):
 def main():
 # local variables
     board = ["_" for i in range(9)]
-    print("hello world")
-    print(board)
-    print(board[8])
+
+    printBoard(board)
     moves = 0
 
     while gameWon(board) == False:
         action = random.choice(range(9))
-        print("action: ", action)
+        # print("action: ", action)
         if board[action] != 'X':
             board[action] = 'X'
             moves = moves + 1
-    print("New board: ", board)
+    print("New board: ")
+    printBoard(board)
     print("Total moves: ", moves)
     board = resetBoard(board)
     
