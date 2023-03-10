@@ -152,14 +152,14 @@ def playGame(board):
 
 def calcReward(moves):
     if moves == 3:
-        return 4
+        return 5
     if moves == 4:
-        return 3
+        return 4
     if moves == 5:
-        return 2
+        return 3
     if moves == 6:
-        return 1
-    return 0
+        return 2
+    return 1
 
 def main():
     initArrays()
